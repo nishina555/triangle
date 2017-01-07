@@ -6,13 +6,13 @@ class Triangle
 
   def triangle_checker
     if @sides[0] + @sides[1] <= @sides[2]
-      puts '三角形じゃないです＞＜'
+      '三角形じゃないです＞＜'
     elsif @sides.all? { |side| side == @sides[0] }
-      puts '正三角形ですね！'
+      '正三角形ですね！'
     elsif @sides[0] == @sides[1] || @sides[1] == @sides[2]
-      puts '二等辺三角形ですね！'
+      '二等辺三角形ですね！'
     else
-      puts '不等辺三角形ですね！'
+      '不等辺三角形ですね！'
     end
   end
 end
@@ -28,7 +28,7 @@ def main
   end
   input = ARGV.map(&:to_i)
   triangle = Triangle.new(input)
-  triangle.triangle_checker
+  puts triangle.triangle_checker
 end
 
-main
+main if $PROGRAM_NAME == __FILE__
